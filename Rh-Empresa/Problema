@@ -1,0 +1,9 @@
+1.Um funcionário terá matrícula, nome, endereço (logradouro e número), telefone fixo, telefone celular e salário. Cada matrícula é única.
+
+2.Departamentos são identificados por seus códigos. Departamentos possuem nome e ramal.
+
+3.Um funcionário poderá estar lotado em apenas um departamento. Um departamento poderá ter vários funcionários lotados nele. Quando um funcionário for lotado em um departamento, a data desta ocorrência deve ser guardada.
+
+4.Cada projeto possui um código único, nome, data de início e previsão de término.
+
+5.Um projeto poderá ser desenvolvido por vários funcionários. Um funcionário poderá se envolver em vários projetos.
