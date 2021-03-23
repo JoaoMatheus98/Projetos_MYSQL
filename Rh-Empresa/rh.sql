@@ -6,7 +6,7 @@ DROP TABLE IF EXISTS Funcionario;
 
 CREATE TABLE IF NOT EXISTS Funcionario
 (
-	Matricula INT(10) NOT NULL AUTO_INCREMENT,
+    Matricula INT(10) NOT NULL AUTO_INCREMENT,
     Nome VARCHAR(25) NULL,
     Logradouro VARCHAR(25) NULL,
     Numero INT(4) NULL,
@@ -20,7 +20,7 @@ DROP TABLE IF EXISTS Departamento;
 
 CREATE TABLE IF NOT EXISTS Departamento
 (
-	Codigo INT(2) NOT NULL AUTO_INCREMENT,
+    Codigo INT(2) NOT NULL AUTO_INCREMENT,
     Nome VARCHAR(10) NULL,
     Ramal VARCHAR(4) NULL,
     PRIMARY KEY (Codigo)
@@ -37,7 +37,7 @@ CREATE TABLE IF NOT EXISTS Departamento_has_Funcionario
 );
 
 ALTER TABLE Departamento_has_Funcionario
-	ADD CONSTRAINT fk_Departamento_has_Funcionario_Matricula_Func1
+    ADD CONSTRAINT fk_Departamento_has_Funcionario_Matricula_Func1
     FOREIGN KEY (Matricula_Func)
     REFERENCES Funcionario (Matricula),
     ADD CONSTRAINT fk_Departamento_has_Funcionario_Codigo1
@@ -48,7 +48,7 @@ DROP TABLE IF EXISTS Projeto;
 
 CREATE TABLE IF NOT EXISTS Projeto
 (
-	Codigo INT(3) NOT NULL AUTO_INCREMENT,
+    Codigo INT(3) NOT NULL AUTO_INCREMENT,
     Nome VARCHAR(30) NULL,
     Data_Inicio DATE NULL,
     Data_Termino DATE NULL,
@@ -59,13 +59,13 @@ DROP TABLE IF EXISTS Projeto_Funcionario;
 
 CREATE TABLE IF NOT EXISTS Projeto_Funcionario
 (
-	Matricula_Func INT(10) NOT NULL,
+    Matricula_Func INT(10) NOT NULL,
     Codigo_Proj INT(3) NOT NULL,
     PRIMARY KEY (Matricula_Func, Codigo_Proj)
 );
 
 ALTER TABLE Projeto_Funcionario
-	ADD CONSTRAINT fk_Projeto_Funcionario_Matricula_Func1
+    ADD CONSTRAINT fk_Projeto_Funcionario_Matricula_Func1
     FOREIGN KEY (Matricula_Func)
     REFERENCES Funcionario (Matricula),
     ADD CONSTRAINT fk_Projeto_Funcionario_Codigo_Proj1
